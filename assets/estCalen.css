@@ -1,0 +1,70 @@
+
+
+/*Grid con el calendario, la tabla con las obligaciones del mes*/
+.calenGrid{
+  display: grid;        /*Modo grid*/
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 10px;
+  padding: 10px;
+  overflow-y: auto;     /*Habilita scroll vertical si se rebasa */
+  max-height: 96%;      /*Definir la altura de la tabla*/
+  row-gap: 0px;         /*Sin espacio entre filas*/
+  column-gap: 0px;      /*Sin espacio entre columnas*/
+  align-self: start;    /*Se alinea al inicio*/
+  justify-self: start;  /*Justificado al inicio, para evitar que el contenido se autoajuste si es muy pequeño*/
+  width: 97%;           /*Tamaño de lado*/
+}
+
+
+/*Grid de toda la opción calendario*/
+.calenGridGeneral{
+  background: #e6bdbdc9;
+  padding: 20px;       /*Margen interior*/
+  display: grid;      /*Modo grid*/
+  grid-template-rows: repeat(3, 1fr) auto repeat(10, 1fr);
+  grid-template-columns: repeat(14, 1fr); 
+  height: 96%;        /*Definir la altura de la tabla*/
+  gap: 10px;          /*Espacio entre objetos*/
+  flex: 1;
+  min-height: 0;  
+}
+
+
+
+/*Posicionamiento de objetos en el grid de calendario (Labels y botones)*/
+
+/*Selector de fechas*/
+.posLabFecha{
+  grid-column: 6 / span 6;
+  grid-row: 3 / span 1;
+}
+
+/*Calendario*/
+.posCalen{
+  grid-column: 1 / span 14;
+  grid-row: 5 / span 10;
+}
+
+/*Separador*/
+.posSepHor{
+  grid-column: 1 / span 14;
+  grid-row: 4 / span 1;
+}
+
+.posTituloCalen{
+  grid-column: 1 / span 14;
+  grid-row: 1 / span 1;
+}
+
+
+
+/*Estos ya no se usaron xd*/
+.posBotIzq{
+  grid-column: 2 / span 3;
+  grid-row: 3 / span 1;
+}
+
+.posBotDer{
+  grid-column: 13 / span 3;
+  grid-row: 3 / span 1;
+}

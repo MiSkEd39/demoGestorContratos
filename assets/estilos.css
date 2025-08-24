@@ -1,0 +1,52 @@
+/*Título del inicio de sesión*/
+.titulo {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 20;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;            /*Ahora el body es un flexbox*/ 
+  flex-direction: column;   /*Que sea por columnas ¿?*/
+  margin: 0;
+  height: 100%;
+}
+
+
+header {
+  background: #d6af41;
+  margin: 0;
+  text-align: center;
+  height: 10%; 
+}
+
+/*Contenido, el que irá entre el header y el footer*/
+.inicioSesion {
+  flex: 1; /* ocupa todo el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical */
+  align-items: center; /* horizontal */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+footer {
+  background: #e0d315;
+  margin: 0;
+  text-align: center;
+  height: 5%; 
+  position: relative; 
+  z-index: 9999;
+}
+
+

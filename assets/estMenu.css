@@ -1,0 +1,99 @@
+/*Menú inicio*/
+
+/*Contenedor con todo el menú(menos header y footer)*/
+.menuInicioBox {
+  height: 85%;
+  display: grid;
+  grid-template-columns: 3fr auto 12fr;
+}
+
+
+/*Caja con los 5 botones y cierre de sesión*/
+.boxOpciones {
+  background: #ddd;
+  padding: 10px;       /*Margen exterior (creo xd)*/
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr auto 1fr; 
+  gap: 10px;          /*Espacio entre objetos*/
+  flex: 1;
+  min-height: 0;  /* importante para que funcione bien en flex */
+}
+
+/* Separador vertical*/
+.sepVer {
+  background: #1d1818;
+  width: 2px;
+}
+
+
+/* Separador horizontal*/
+.sepHor {
+  height: 2px;
+  background: #1d1818;
+  margin-left: -10px;   /*Para que se salga de su rango*/
+  margin-right: -10px;
+}
+
+
+/*Estos dos son para mostrar o no msotrar las opciones, según yo, estos no se deben de tocar*/
+.panel {
+  display: none;
+}
+.panel.activo {
+  display: block;
+  flex: 1;
+  min-height: 0;  
+}
+
+/* Botones opciones */
+/*Botón sin seleccionar*/
+.opcion {
+  cursor: pointer;  /*Para que se ponga la manita esa con el ratón encima del botón*/
+  padding: 10px;
+  border: none;
+  background: #ccc;
+  font-weight: bold;
+}
+
+/*Cómo se verá el botón activo, sólamente le cambié el background y el color del texto, el resto es igual*/
+.opcion.active {
+  background: steelblue;
+  color: white;
+}
+
+
+/*Estilo para el botón de cerrar sesión*/
+.botClose {
+  cursor: pointer;
+  border: none;
+  background: #a3a3a396;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+/*Tuve que poner estas cosas para que aun dentro del forms, se vea igual que los otros botones*/
+.botClose button {
+  all: unset;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
+
+
+/*Centrador de objetos, centra horizontalmente y pone hasta arriba (verticalmente) */
+/*Creo que ni lo uso jaja*/
+.centrarArriba {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

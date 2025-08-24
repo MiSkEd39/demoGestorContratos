@@ -1,0 +1,31 @@
+/*Caja con las cajas de búsqueda, separador y caja de resultados*/
+.boxChuleta {
+  background: #e6bdbdc9;
+  padding: 10px;       /*Margen interior*/
+  margin: 0px;        /*Margen exterior*/ 
+  height :100%;
+  flex: 1;
+  min-height: 0; 
+  overflow: auto;     /*Scroll si hace falta*/
+}
+
+
+.tablaxFideo {              /*La tabla entera de un fideicomiso, con sus bancos y proyectos*/
+  background: #e6bdbdc9;  /*Color sólo para ver el tamaño de tabla*/
+  display: flex;            /*Caja tipo flex*/
+  gap: 0px;
+  margin-bottom: 30px;
+  align-items: flex-start;  /*Alinear cosas arriba*/
+  padding: 10px;
+}
+
+.tablaxBanco {
+  display: flex;
+  flex-direction: column;   /*Le indico a la caja que ponga los items (el banco y sus proyectos) de arriba a abajo*/
+  min-width: 150px;
+}
+
+/*Título del fideicomiso*/
+.tituloChuleta{
+  font-weight: bold;
+}

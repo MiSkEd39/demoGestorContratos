@@ -1,0 +1,378 @@
+<!-- inicio header.php -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestor de Contratos</title>
+    <link rel="stylesheet" href="assets/estilos.css?v=2">
+    <link rel="stylesheet" href="assets/estObligContr.css?v=3">
+    <link rel="stylesheet" href="assets/estCalen.css?v=2">
+    <link rel="stylesheet" href="assets/estChuleta.css?v=2">
+    <link rel="stylesheet" href="assets/estMenu.css?v=2">
+</head>
+<body>
+    <header>
+        <h1 class="titulo">Gestor de Contratos</h1>
+    </header>
+
+<!-- fin header.php -->
+
+
+<!-- inicio botOpciones.php -->
+
+    <div class="menuInicioBox">         
+        <script src="js/cambioOpciones.js"></script>
+        <div class="boxOpciones">
+            <button class="opcion active" data-panel="panel4">Chuleta</button>
+            <button class="opcion" data-panel="panel1">Contratos</button>
+            <button class="opcion" data-panel="panel2">Obligaciones</button>
+            <button class="opcion" data-panel="panel5">Incumplimientos</button>
+            <button class="opcion" data-panel="panel3">Calendario</button>
+            <div class="sepHor"></div>
+            <form class="botClose">
+                <button type="submit">Cerrar Sesión</button>
+            </form>
+        </div>
+
+    <div class="sepVer"></div>
+
+<!-- fin botOpciones.php -->
+
+
+<!-- inicio opContratos.php -->
+
+        <div id="panel1" class="panel">                                  <!--Panel con todo para poder aparecer y desaparecer-->     
+            <div class = "boxBusqGeneral">                                      <!--Panel con la caja de búsqueda, separador y caja de resultados-->   
+                <div class = "boxBusq">                                         <!--Caja con buscador de contratos-->  
+                    <div class="posTitulo">Búscador de contratos</div>
+                    <div class="posLabFid">Fideicomiso:</div>
+                    <div class="posLabProy">Proyecto:</div>
+                    <div class="posLabBanc">Banco:</div>
+                    
+                    <!--Menú desplegable de fideos-->
+                    <div class="posMenuFid">
+                        <select id="fideosCont" name="menuFideos">
+                            <option>Fideo 1</option>
+                            <option>Fideo 2</option>
+                        </select>
+                    </div>
+
+                    <div class="posMenuBanc">
+                        <select id="bancCont" name="menuBanc">
+                            <option>Banco 1</option>
+                            <option>Banco 2</option>
+                        </select>
+                    </div>
+
+                    <div class="posMenuProy">
+                        <select id="proyCont" name="menuProy">
+                            <option>Proyecto 1</option>
+                            <option>Proyecto 2</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="sepHor"></div>
+                <div id = "boxCont" class = "boxCont">
+                    <div class="encabezado">Contrato</div>
+                    <div class="celda"><a href="void.php" target="_blank">Contrato confidencial, español</a></div>
+                    <div class="celda"><a href="void.php" target="_blank">Contrato confidencial, inglés</a></div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- fin opContratos.php -->
+
+
+<!-- inicio opOblig.php -->
+
+        <div id="panel2" class="panel">
+            <div class = "boxBusqGeneral">                                      <!--Panel con la caja de búsqueda, separador y caja de resultados-->   
+                <div class = "boxBusq">                                         <!--Caja con buscador de contratos-->  
+                    <div class="posTitulo">Búscador de obligaciones</div>
+                    <div class="posLabFid">Fideicomiso:</div>
+                    <div class="posLabProy">Proyecto:</div>
+                    <div class="posLabBanc">Banco:</div>
+                    
+                    <!--Menú desplegable de fideos-->
+                    <div class="posMenuFid">
+                        <select id="fideosOblig" name="menuFideos">
+                            <option>Fideo 1</option>
+                            <option>Fideo 2</option>
+                        </select>
+                    </div>
+
+                    <div class="posMenuBanc">
+                        <select id="bancOblig" name="menuBanc">
+                            <option>Banco 1</option>
+                            <option>Banco 2</option>
+                        </select>
+                    </div>
+                    <div class="posMenuProy">
+                        <select id="proyOblig" name="menuProy" onchange = buscarOblig(this.value)>
+                            <option>Proyecto 1</option>
+                            <option>Proyecto 2</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="sepHor"></div>
+                <div id="boxOblig" class="boxOblig">
+
+                    <!-- Fila de encabezado de tabla -->
+                    <div class="encabezado">Obligación</div>
+                    <div class="encabezado">Frecuencia</div>
+                    <div class="encabezado">Clausula</div>
+                    <div class="encabezado">Nota</div>
+                    
+                    <!-- Fila 1 -->
+                    <div class="celda">Pago de Semestral</div>
+                    <div class="celda">Semestral</div>
+                    <div class="celda"><a href="void.php" target="_blank">Cláusula 1.1</a></div>
+                    <div class="celda">-</div>
+                    
+                    <!-- Fila 2 -->
+                    <div class="celda">Leyes estrictas</div>
+                    <div class="celda">Durante la vigencia del contrato</div>
+                    <div class="celda"><a href="void.php" target="_blank">Cláusula 2.2</a></div>
+                    <div class="celda">Lorem ipsum dolor sit amet consectetur adipiscing elit molestie, dis facilisis facilisi.</div>
+                    
+                    <!-- Fila 3 -->
+                    <div class="celda">Estados anuales</div>
+                    <div class="celda">Anual</div> 
+                    <div class="celda"><a href="void.php" target="_blank">Cláusula 3.3</a></div>
+                    <div class="celda">Lorem ipsum dolor sit amet consectetur adipiscing elit dapibus nisi sem viverra himenaeos, aenean felis feugiat placerat hendrerit volutpat nullam senectus nisl rhoncus. Mus etiam egestas auctor ligula fusce ut phasellus, aenean sociosqu tempor fringilla id gravida vehicula, vitae nunc tempus suscipit nisl vulputate. Ultric.</div>
+                    
+                    <!-- Fila 4 -->
+                    <div class="celda">Estados Trimestrales</div>
+                    <div class="celda">Trimestral</div>
+                    <div class="celda"><a href="void.php" target="_blank">Cláusula 4.4</a></div>
+                    <div class="celda">Lorem ipsum dolor sit amet consectetur adipiscing elit venenatis integer, vel proin ullamcorper nostra fames quam nisl maecenas velit, sem habitant congue odio facilisis parturient praesent phasellus. Class mus sapien magna fermentum arcu iaculis taciti fringilla consequat lectus.</div>
+                    
+                    <!-- Fila 5 -->
+                    <div class="celda">Certificado</div>
+                    <div class="celda">Anual</div>
+                    <div class="celda"><a href="void.php" target="_blank">Cláusula 5.5</a></div>
+                    <div class="celda">Lorem ipsum dolor sit amet consectetur adipiscing elit non libero placerat cubilia, malesuada eleifend enim sodales ultrices purus hendrerit magna mus accums.</div>
+                    
+                    <!-- Fila 6 -->
+                    <div class="celda">Legislación pertinente</div>
+                    <div class="celda">-</div>
+                    <div class="celda"><a href="void.php" target="_blank">Cláusula 6.6</a></div>
+                    <div class="celda">Lorem ipsum dolor sit amet consectetur adipiscing elit quam.</div>
+                    
+                    <!-- Fila 7 -->
+                    <div class="celda">Reclamaciones ambientales</div>
+                    <div class="celda">-</div>
+                    <div class="celda"><a href="void.php" target="_blank">Cláusula 7.7</a></div>
+                    <div class="celda">Lorem ipsum dolor sit amet consectetur, adipiscing elit sociis egestas sollicitudin, cum vel morbi mus. Volutpat integer rhoncus elementum leo scelerisque vestibulum.</div>
+                    
+                    <!-- Fila 8 -->
+                    <div class="celda">Condición financiera</div>
+                    <div class="celda">Ajá</div>
+                    <div class="celda"><a href="void.php" target="_blank">Cláusula 8.8</a></div>
+                    <div class="celda">Lorem ipsum dolor sit amet consectetur adipiscing elit blandit tortor, fusce commodo nulla platea fusce.</div>
+                    
+                    <!-- Fila 9 -->
+                    <div class="celda">Cumplimiento</div>
+                    <div class="celda">-</div>
+                    <div class="celda"><a href="void.php" target="_blank">Cláusula 9.9</a></div>
+                    <div class="celda">Lorem ipsum dolor sit amet consectetur, adipiscing elit praesent vel justo etiam, maecenas sociis enim quis. Senectus tempu.</div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- fin opOblig.php -->
+
+
+<!-- inicio opCalen.php -->
+
+        <div id="panel3" class="panel">
+            <div class = "calenGridGeneral" id="CalenAll">
+                <div class = "posTituloCalen">Calendario de obligaciones</div>
+
+                <div class = "posLabFecha">
+                    <label for="selectorMes">Mes y año:</label>
+                    <input type="month" id="selectorMes" name="selectorMes" min="2025-06">
+                </div>
+
+                <div class = "posSepHor">
+                    <div class="sepHor"></div>
+                </div>
+
+                <div class = "posCalen">
+                    <div class="calenGrid">
+
+                        <!-- Encabezado de tabla -->
+                        <div class="encabezado">Fideicomiso</div>
+                        <div class="encabezado">Banco</div>
+                        <div class="encabezado">Proyecto</div>
+                        <div class="encabezado">Obligación</div>
+                        <div class="encabezado">Cláusula</div>
+                        <div class="encabezado">Fecha de corte</div>
+
+
+                        <!-- Fila 1 -->
+                        <div class="celda">Fideo 1</div>
+                        <div class="celda">Banco 1</div>
+                        <div class="celda">Proyecto 1</div>
+                        <div class="celda">Pago de dinero xd</div>
+                        <div class="celda">Cláusula 1</div>
+                        <div class="celda">17/Septiembre/2025</div>
+
+                        <!-- Fila 2 -->
+                        <div class="celda">Fideo 1</div>
+                        <div class="celda">Banco 2</div>
+                        <div class="celda">Proyecto 0</div>
+                        <div class="celda">Comprar cosas</div>
+                        <div class="celda">Cláusula 1.1</div>
+                        <div class="celda">23/Julio/2025</div>
+
+                        <!-- Fila 3 -->
+                        <div class="celda">Fideo 2</div>
+                        <div class="celda">Banco 1</div>
+                        <div class="celda">Proyecto 2</div>
+                        <div class="celda">Leyes ambientales</div>
+                        <div class="celda">Cláusula 10.3</div>
+                        <div class="celda">31/diciembre/2025</div>
+
+                        <!-- Fila 4 -->
+                        <div class="celda">Fideo 5</div>
+                        <div class="celda">Banco 17</div>
+                        <div class="celda">Proyecto 12</div>
+                        <div class="celda">Más leyes</div>
+                        <div class="celda">Cláusula 12</div>
+                        <div class="celda">12/Agosto/2026</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- fin opCalen.php -->
+
+
+<!-- inicio opIncumpl.php -->
+
+
+        <div id="panel5" class="panel">
+            <div class = "boxBusqGeneral">                                      <!--Panel con la caja de búsqueda, separador y caja de resultados-->   
+                <div class = "boxBusq">                                         <!--Caja con buscador de contratos-->  
+                    <div class="posTitulo">Búscador de incumplimientos</div>
+                    <div class="posLabFid">Fideicomiso:</div>
+                    <div class="posLabProy">Proyecto:</div>
+                    <div class="posLabBanc">Banco:</div>
+                    
+                    <!--Menú desplegable de fideos-->
+                    <div class="posMenuFid">
+                        <select id="fideosIncumpl" name="menuFideos">
+                            <option>Fideo 1</option>
+                            <option>Fideo 2</option>
+                        </select>
+                    </div>
+
+                    <div class="posMenuBanc">
+                        <select id="bancIncumpl" name="menuBanc">
+                            <option>Banco 1</option>
+                            <option>Banco 2</option>
+                        </select>
+                    </div>
+                    <div class="posMenuProy">
+                        <select id="proyIncumpl" name="menuProy">
+                            <option>Proyecto 1</option>
+                            <option>Proyecto 2</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="sepHor"></div>
+                <div id="boxIncumpl" class="boxIncumpl">
+
+                    <!-- Encabezado de tabla -->
+                    <div class="encabezado">Incumplimiento</div>
+                    <div class="encabezado">Cláusula</div>
+                    <div class="encabezado">Nota</div>
+                    <div class="encabezado">Periodo de gracia</div>
+
+                    <!-- div que define la posición del mensaje. Para que pueda ocupar varias columnas y filas, no sólo una -->
+                    <div class="posWarEmpty"> 
+                        <div class="warEmpty"> No se especificó </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- fin opIncumpl.php -->
+
+
+<!-- inicio opChuleta.php -->
+
+        <div id="panel4" class="panel activo">
+            <div class = "boxChuleta" id ="contChuleta">
+                
+                <!-- Título del fideicomiso -->
+                <div class="tituloChuleta">Fiedo 1</div>
+
+                <!-- La tabla de ese fideicomiso -->
+                <div class="tablaxFideo">
+
+                    <!-- Columna 1, encabezado es el título del banco, celda son los proyectos -->
+                    <div class="tablaxBanco">
+                        <div class="encabezado">Banco 1</div>
+                        <div class="celda">Proyecto 1</div>
+                    </div>
+                    
+                    <!-- Columna 2, encabezado es el título del banco, celda son los proyectos -->
+                    <div class="tablaxBanco">
+                        <div class="encabezado">Banco 2</div>
+                        <div class="celda">Proyecto 2</div>
+                        <div class="celda">Proyecto 3</div>
+                    </div>
+                </div>
+
+
+
+                <!-- Título del fideicomiso -->
+                <div class="tituloChuleta">Fideo 2</div>
+
+                <!-- La tabla de ese fideicomiso -->
+                <div class="tablaxFideo">
+
+                    <!-- Columna 2, encabezado es el título del banco, celda son los proyectos -->
+                    <div class="tablaxBanco">
+                        <div class="encabezado">Banco 3</div>
+                        <div class="celda">Proyecto 4</div>
+                        <div class="celda">Proyectyo 5</div>
+                    </div>
+
+                    <!-- Columna 2, encabezado es el título del banco, celda son los proyectos -->
+                    <div class="tablaxBanco">
+                        <div class="encabezado">Banco 4</div>
+                        <div class="celda">Proyecto 6</div>
+                    </div>
+                    
+                    <!-- Columna 3, encabezado es el título del banco, celda son los proyectos -->
+                    <div class="tablaxBanco">
+                        <div class="encabezado">Bacno 5</div>
+                        <div class="celda">Proyecto 7</div>
+                        <div class="celda">Proyecto 8</div>
+                    </div>
+                </div>
+            </div>      
+        </div>
+    </div>  
+
+<!-- fin opChuleta.php -->
+
+
+<!-- inicio footer.php -->
+
+    <footer>
+        <p>© 2025 Empresa</p>
+    </footer>
+</body>
+</html>
+
+<!-- fin footer.php -->
